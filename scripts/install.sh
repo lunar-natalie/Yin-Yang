@@ -13,8 +13,8 @@ fi
 echo "Uninstalling old version, if it exists"
 ./scripts/uninstall.sh
 
-echo "Installing dependencies …"
-pip3 install -r requirements.txt
+#echo "Installing dependencies …"
+#pip3 install -r requirements.txt
 echo "Installing yin yang"
 #check if /opt/ directory exists else create
 if [ ! -d /opt/ ]; then
@@ -35,7 +35,7 @@ if [ ! -d "$USER_HOME/.local/share/applications/" ]; then
     mkdir -p "$USER_HOME/.local/share/applications/"
 fi
 # copy files TODO this copies a bunch of unnecessary files
-cp -r ./* /opt/yin-yang/
+cp -r ./* .venv/ /opt/yin-yang/
 # copy manifest for firefox extension
 cp ./resources/yin_yang.json /usr/lib/mozilla/native-messaging-hosts/
 # copy terminal executive
